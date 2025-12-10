@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A&O Christmas Party Quiz 2025</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="banner">
+        <div>
+          <p class="eyebrow">A&O Christmas Party 2025</p>
+          <h1>Live Christmas Quiz</h1>
+          <p class="subhead">
+            Up to 100 guests can join with the event code. Answers and winners reveal when the quiz wraps up!
+          </p>
+        </div>
+        <div class="code-card">
+          <p class="label">Event code</p>
+          <p class="code" id="event-code">----</p>
+          <p class="hint">Share this code so everyone can join the game.</p>
+        </div>
+      </header>
+
+      <main class="layout">
+        <section class="card">
+          <h2>Join the quiz</h2>
+          <form id="join-form" class="stack">
+            <label>
+              Display name
+              <input id="name-input" type="text" maxlength="30" placeholder="Your name" required />
+            </label>
+            <label>
+              Event code
+              <input id="code-input" type="text" placeholder="Event code" required />
+            </label>
+            <button type="submit" class="primary">Join lobby</button>
+            <p class="hint" id="join-hint">Waiting to join...</p>
+          </form>
+        </section>
+
+        <section class="card">
+          <h2>Host controls</h2>
+          <div class="stack">
+            <label>
+              Host PIN
+              <input id="host-pin" type="password" placeholder="Enter host PIN" />
+            </label>
+            <div class="actions">
+              <button id="start-btn" class="primary">Start quiz</button>
+              <button id="reveal-btn">Reveal answer</button>
+              <button id="next-btn">Next question</button>
+            </div>
+            <p class="hint">Host PIN is required for quiz controls.</p>
+          </div>
+        </section>
+
+        <section class="card wide">
+          <div class="card-heading">
+            <h2>Quiz board</h2>
+            <p class="status" id="phase-indicator">In the lobby</p>
+          </div>
+          <div id="question-area" class="question-area">
+            <p class="empty">Waiting to start.</p>
+          </div>
+        </section>
+
+        <section class="card wide">
+          <div class="card-heading">
+            <h2>Players</h2>
+            <p id="player-count"></p>
+          </div>
+          <ol id="leaderboard" class="leaderboard"></ol>
+        </section>
+      </main>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/script.js" type="module"></script>
+  </body>
+</html>

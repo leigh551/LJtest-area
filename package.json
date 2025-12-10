@@ -1,0 +1,13 @@
+{
+  "name": "ao-christmas-quiz",
+  "version": "1.0.0",
+  "description": "Multiuser Christmas quiz app for A&O Christmas Party 2025",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "socket.io": "^4.7.5"
+  }
+}
